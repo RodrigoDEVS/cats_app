@@ -1,4 +1,3 @@
-import 'package:gatos_app/data/cats_model.dart';
 import 'package:gatos_app/data/models/breeds_model.dart';
 import 'package:gatos_app/data/repositories/cats_repository.dart';
 
