@@ -8,17 +8,21 @@ class DetailPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final scrollController = ScrollController();
+    final size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(title: Text(breed.name ?? 'No name')),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
           children: [
-            Hero(
-              tag: breed.id ?? '',
-              child: ClipRRect(
-                borderRadius: BorderRadius.all(Radius.circular(10)),
-                child: Image(image: NetworkImage(breed.image?.url ?? '')),
+            Container(
+              constraints: BoxConstraints(maxHeight: size.height * 0.5),
+              child: Hero(
+                tag: breed.id ?? '',
+                child: ClipRRect(
+                  borderRadius: BorderRadius.all(Radius.circular(10)),
+                  child: Image(image: NetworkImage(breed.image?.url ?? '')),
+                ),
               ),
             ),
             const SizedBox(height: 10),
